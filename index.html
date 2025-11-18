@@ -1,1 +1,337 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nido del Cardenal — Arte</title>
+
+  <style>
+    :root {
+      --bg: #f5efe6;
+      --bg-alt: #f1e4d4;
+      --text: #3b2f2a;
+      --muted: #7d6a5b;
+      --accent: #c99a5b;
+      --accent-soft: #e0b980;
+      --radius-lg: 18px;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+
+    .site-header {
+      background: linear-gradient(to bottom, #f7f0e5, #f3e7d9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0 1.1rem;
+      gap: 1rem;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: var(--shadow-soft);
+      background: #fdf8f1;
+    }
+
+    .logo-text h1 {
+      font-size: 1.4rem;
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+
+    .logo-text p {
+      margin: 0.1rem 0 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Botones */
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+      background: #b88540;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--accent-soft);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .hero-inner {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-text {
+      max-width: 640px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 2rem 1.8rem;
+    }
+
+    .hero-text h2 {
+      margin-top: 0;
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      margin-bottom: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Artistas */
+
+    .artists {
+      padding: 2.5rem 0 3rem;
+      background: var(--bg-alt);
+    }
+
+    .artists h2 {
+      margin-top: 0;
+      margin-bottom: 1.8rem;
+      font-size: 1.5rem;
+    }
+
+    .artists-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .artist-card {
+      background: #fdf8f2;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .artist-photo {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    .artist-info h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .artist-info p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Footer */
+
+    .site-footer {
+      padding: 1.5rem 0 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn-primary {
+        align-self: stretch;
+        justify-content: center;
+      }
+
+      .hero-text {
+        padding: 1.6rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo-block">
+        <!-- Cambiá el src por la ruta de tu logo -->
+        <img src="img/logo-nido.png" alt="Logo Nido del Cardenal" class="logo-img">
+        <div class="logo-text">
+          <h1>Nido del Cardenal</h1>
+          <p>Fotografía & obra gráfica en pequeño formato</p>
+        </div>
+      </div>
+
+      <!-- Botón destacado a la tienda -->
+      <a class="btn-primary"
+         href="https://nidodelcardenalarte.mitiendanube.com/"
+         target="_blank"
+         rel="noopener">
+        Ir a la tienda
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección de bienvenida -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Un refugio para las imágenes que quieren volar</h2>
+          <p>
+            Nido del Cardenal es un espacio mínimo donde se juntan fotos, postales y
+            pequeñas obras que vienen del interior: rutas, montes, pueblos que se
+            mueven de lugar pero siguen brillando en la memoria.
+          </p>
+          <p>
+            Trabajamos con tiradas breves, pensadas para acompañar una mesa de trabajo,
+            una biblioteca o la pared de una casa que espera paisaje y relatos en silencio.
+          </p>
+          <a class="btn-secondary"
+             href="https://nidodelcardenalarte.mitiendanube.com/"
+             target="_blank"
+             rel="noopener">
+            Ver obras disponibles
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Artistas -->
+    <section id="artistas" class="artists">
+      <div class="container">
+        <h2>Artistas</h2>
+
+        <div class="artists-grid">
+          <!-- Gustavo -->
+          <article class="artist-card">
+            <!-- Cambiá el src por la foto que quieras -->
+            <img src="img/gustavo-lozano.jpg" alt="Obra o retrato de Gustavo Lozano" class="artist-photo">
+            <div class="artist-info">
+              <h3>Gustavo Lozano</h3>
+              <p>
+                Poeta y fotógrafo. Sus series recorren el litoral, los cardos, los pueblos
+                que se mudan de orilla y las escenas mínimas donde la luz parece estar
+                recordando algo.
+              </p>
+            </div>
+          </article>
+
+          <!-- Sol -->
+          <article class="artist-card">
+            <img src="img/sol-santarsiero.jpg" alt="Obra o retrato de Sol Santarsiero" class="artist-photo">
+            <div class="artist-info">
+              <h3>Sol Santarsiero</h3>
+              <p>
+                Fotógrafa de paisaje y retratos. Ensayos cordobeses, rutas y montañas,
+                postales del interior donde el tiempo se queda un poco más sobre las caras
+                y las paredes.
+              </p>
+            </div>
+          </article>
+
+          <!-- Julio -->
+          <article class="artist-card">
+            <img src="img/julio-fuks.jpg" alt="Obra o retrato de Julio Fuks" class="artist-photo">
+            <div class="artist-info">
+              <h3>Julio Fuks</h3>
+              <p>
+                Dibujante y fotógrafo. Cruza líneas, sombras y fragmentos de ciudad
+                con una mirada que busca siempre el borde: lo que está a punto de aparecer
+                o de desaparecer del cuadro.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Nido del Cardenal — Arte en pequeño formato</p>
+      <p>
+        Obras disponibles en
+        <a href="https://nidodelcardenalarte.mitiendanube.com/"
+           target="_blank"
+           rel="noopener">
+          Nuestra Tienda Nube
+        </a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
 
