@@ -17,9 +17,7 @@
       --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
     }
 
-    *,
-    *::before,
-    *::after {
+    * {
       box-sizing: border-box;
     }
 
@@ -39,49 +37,50 @@
     }
 
     /* Header */
-
     .site-header {
       background: linear-gradient(to bottom, #f7f0e5, #f3e7d9);
       border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     }
 
-  .header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 1.8rem 0 1.6rem;
-}
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0 1rem;
+    }
 
     .logo-block {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.2rem;
     }
 
     .logo-img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  border-radius: 50%;
-  box-shadow: var(--shadow-soft);
-  background: #fdf8f1;
-  margin: 0 auto;
-}
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: var(--shadow-soft);
+      background: #fdf8f1;
+      margin-bottom: 0.3rem;
+    }
+
     .logo-text h1 {
       font-size: 1.4rem;
       margin: 0;
       letter-spacing: 0.04em;
+      text-align: center;
     }
 
     .logo-text p {
-      margin: 0.1rem 0 0;
+      margin: 0;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
     /* Botones */
-
     .btn-primary,
     .btn-secondary {
       display: inline-flex;
@@ -91,38 +90,26 @@
       border-radius: 999px;
       font-size: 0.95rem;
       text-decoration: none;
-      border: none;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
       white-space: nowrap;
+      transition: 0.15s ease;
     }
 
     .btn-primary {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
-      background: #b88540;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
 
     .btn-secondary {
       background: transparent;
-      color: var(--text);
       border: 1px solid var(--accent-soft);
+      color: var(--text);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.7);
-    }
-
-    /* Hero */
-
+    /* HERO –– ACHICADO */
     .hero {
-      padding: 3rem 0 2.5rem;
+      padding: 0.8rem 0 0.6rem;
     }
 
     .hero-inner {
@@ -132,50 +119,52 @@
 
     .hero-text {
       max-width: 640px;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255,255,255,0.4);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      padding: 2rem 1.8rem;
+      padding: 0.6rem 1rem;
+      box-shadow: none;
     }
 
     .hero-text h2 {
       margin-top: 0;
-      font-size: 1.7rem;
-      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      text-align: center;
     }
 
     .hero-text p {
-      margin-bottom: 0.9rem;
+      margin: 0 0 0.3rem;
       color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
     }
 
     /* Artistas */
-
     .artists {
-      padding: 2.5rem 0 3rem;
+      padding: 1.5rem 0 2rem;
       background: var(--bg-alt);
     }
 
     .artists h2 {
-      margin-top: 0;
-      margin-bottom: 1.8rem;
-      font-size: 1.5rem;
+      margin: 0 0 1.2rem;
+      font-size: 1.4rem;
+      text-align: center;
     }
 
     .artists-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      gap: 1.3rem;
     }
 
     .artist-card {
       background: #fdf8f2;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
-      padding: 1.4rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.8rem;
     }
 
     .artist-photo {
@@ -186,47 +175,55 @@
     }
 
     .artist-info h3 {
-      margin: 0 0 0.4rem;
+      margin: 0 0 0.3rem;
       font-size: 1.1rem;
     }
 
     .artist-info p {
       margin: 0;
-      font-size: 0.95rem;
       color: var(--muted);
+      font-size: 0.95rem;
     }
 
     /* Footer */
-
     .site-footer {
-      padding: 1.5rem 0 2rem;
+      padding: 1.2rem 0 1.8rem;
       text-align: center;
       font-size: 0.9rem;
       color: var(--muted);
     }
 
+    /* MOBILE OPTIMIZATION */
     @media (max-width: 640px) {
-      .header-content {
-        flex-direction: column;
-        align-items: flex-start;
+      .logo-img {
+        width: 100px;
+        height: 100px;
       }
 
-      .btn-primary {
-        align-self: stretch;
-        justify-content: center;
+      .hero {
+        padding: 0.4rem 0 0.5rem;
       }
 
       .hero-text {
-        padding: 1.6rem 1.4rem;
+        padding: 0.5rem 0.8rem;
+      }
+
+      .hero-text h2 {
+        font-size: 1.05rem;
+      }
+
+      .hero-text p {
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-content">
+
       <div class="logo-block">
-        <!-- Cambiá el src por la ruta de tu logo -->
         <img src="img/logo-nido.png" alt="Logo Nido del Cardenal" class="logo-img">
         <div class="logo-text">
           <h1>Nido del Cardenal</h1>
@@ -234,97 +231,71 @@
         </div>
       </div>
 
-      <!-- Botón destacado a la tienda -->
-      <a class="btn-primary"
-         href="https://nidodelcardenalarte.mitiendanube.com/"
-         target="_blank"
-         rel="noopener">
-        Ir a la tienda
-      </a>
+      <a class="btn-primary" href="https://nidodelcardenalarte.mitiendanube.com/" target="_blank">Ir a la tienda</a>
     </div>
   </header>
 
   <main>
-    <!-- Sección de bienvenida -->
+
+    <!-- HERO REDUCIDO -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
           <h2>Un refugio para imágenes que quieren volar</h2>
-          <p>
-        Obras del interior, pequeñas y luminosas,
-        hechas para acompañar
-        los rincones que piden paisaje.
-          <p>
-          </p>
-          <a class="btn-secondary"
-             href="https://nidodelcardenalarte.mitiendanube.com/"
-             target="_blank"
-             rel="noopener">
-            Ver obras disponibles
-          </a>
+          <p>Obras del interior, pequeñas y luminosas, hechas para acompañar los rincones que piden paisaje.</p>
+          <a class="btn-secondary" href="https://nidodelcardenalarte.mitiendanube.com/" target="_blank">Ver obras disponibles</a>
         </div>
       </div>
     </section>
 
-    <!-- Sección Artistas -->
+    <!-- ARTISTAS -->
     <section id="artistas" class="artists">
       <div class="container">
         <h2>Artistas</h2>
 
         <div class="artists-grid">
+
           <!-- Gustavo -->
           <article class="artist-card">
-            <!-- Cambiá el src por la foto que quieras -->
-            <img src="img/gustavo-lozano.jpg" alt="Obra o retrato de Gustavo Lozano" class="artist-photo">
+            <img src="img/gustavo-lozano.jpg" class="artist-photo">
             <div class="artist-info">
               <h3>Gustavo Lozano</h3>
-              <p>
-                Poeta y fotógrafo. Sus series recorren el litoral, los cardos, los pueblos
-                que se mudan de orilla y las escenas mínimas donde la luz parece estar
-                recordando algo.
-              </p>
+              <p>Poeta y fotógrafo. El litoral, los cardos y las orillas mudadas recorren su obra mínima y luminosa.</p>
             </div>
           </article>
 
           <!-- Sol -->
           <article class="artist-card">
-            <img src="img/sol-santarsiero.jpg" alt="Obra o retrato de Sol Santarsiero" class="artist-photo">
+            <img src="img/sol-santarsiero.jpg" class="artist-photo">
             <div class="artist-info">
               <h3>Sol Santarsiero</h3>
-              <p>
-                Fotógrafa de paisaje y retratos. Postales del interior, rutas y montañas,
-                donde el tiempo se queda un poco más sobre las caras y las paredes.
-              </p>
+              <p>Fotógrafa de paisaje y retratos. Postales del interior donde la luz se queda sobre montañas y paredes.</p>
             </div>
           </article>
 
-         <!--
-<article class="artist-card">
-  <img src="img/julio-fuks.jpg" alt="Obra o retrato de Julio Fuks" class="artist-photo">
-  <div class="artist-info">
-    <h3>Julio Fuks</h3>
-    <p>
-      Dibujante y fotógrafo. Cruza líneas, sombras y fragmentos de ciudad
-      con una mirada que busca siempre el borde: lo que está a punto de aparecer
-      o de desaparecer del cuadro.
-    </p>
-  </div>
-</article>
--->
+          <!-- Julio (comentado) -->
+          <!--
+          <article class="artist-card">
+            <img src="img/julio-fuks.jpg" class="artist-photo">
+            <div class="artist-info">
+              <h3>Julio Fuks</h3>
+              <p>Dibujante y fotógrafo. Líneas, sombras y ciudad detenidas en sus bordes mínimos.</p>
+            </div>
+          </article>
+          -->
+
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
+    <div class="container">
       <p>Nido del Cardenal — Arte en pequeño formato</p>
-      <p>
-        Obras disponibles en
-        <a href="https://nidodelcardenalarte.mitiendanube.com/"
-           target="_blank"
-           rel="noopener">
-          Nuestra Tienda Nube
-        </a>.
-      </p>
+      <p>Obras disponibles en <a href="https://nidodelcardenalarte.mitiendanube.com/" target="_blank">Nuestra Tienda Nube</a>.</p>
     </div>
   </footer>
+
 </body>
 </html>
-
