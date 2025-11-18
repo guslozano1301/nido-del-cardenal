@@ -84,22 +84,6 @@
       background: transparent;
     }
 
-    .social-buttons {
-      display: flex;
-      gap: 0.6rem;
-      margin-top: 0.4rem;
-    }
-
-    @media (max-width: 480px) {
-      .social-buttons {
-        flex-direction: column;
-        width: 100%;
-      }
-      .social-buttons a {
-        width: 100%;
-      }
-    }
-
     /* HERO */
     .hero {
       padding: 0.8rem 0 0.4rem;
@@ -133,13 +117,13 @@
 
     .artists-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;  /* <<--- fuerza dos columnas */
+      grid-template-columns: 1fr 1fr;
       gap: 1.2rem;
     }
 
     @media (max-width: 500px) {
       .artists-grid {
-        grid-template-columns: 1fr; /* uno abajo del otro solo en celulares chicos */
+        grid-template-columns: 1fr;
       }
     }
 
@@ -158,10 +142,35 @@
     }
 
     footer {
-      padding: 1.4rem 0;
+      padding: 1.4rem 0 2rem;
       text-align: center;
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social-footer {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 480px) {
+      .social-footer {
+        flex-direction: column;
+      }
+      .social-footer a {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -178,14 +187,6 @@
        target="_blank" rel="noopener">
        Ir a la tienda
     </a>
-
-    <div class="social-buttons">
-      <a class="btn-secondary" href="https://instagram.com/nidodelcardenal"
-         target="_blank" rel="noopener">Instagram</a>
-
-      <a class="btn-secondary" href="https://wa.me/541170542045"
-         target="_blank" rel="noopener">WhatsApp</a>
-    </div>
   </div>
 </header>
 
@@ -234,6 +235,16 @@
     <a href="https://nidodelcardenalarte.mitiendanube.com/"
        target="_blank" rel="noopener">Nuestra Tienda Nube</a>.
   </p>
+
+  <div class="social-footer">
+    <a class="btn-secondary"
+       href="https://instagram.com/nidodelcardenal"
+       target="_blank" rel="noopener">Instagram</a>
+
+    <a class="btn-secondary"
+       href="https://wa.me/541170542045"
+       target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 </footer>
 
 </body>
