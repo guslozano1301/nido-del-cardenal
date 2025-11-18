@@ -47,7 +47,7 @@
       flex-direction: column;
       align-items: center;
       gap: 1rem;
-      padding: 1rem 0 1rem;
+      padding: 1rem 0;
     }
 
     .logo-block {
@@ -78,6 +78,7 @@
       margin: 0;
       font-size: 0.9rem;
       color: var(--muted);
+      text-align: center;
     }
 
     /* Botones */
@@ -107,7 +108,12 @@
       color: var(--text);
     }
 
-    /* HERO –– ACHICADO */
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    /* HERO reducido */
     .hero {
       padding: 0.8rem 0 0.6rem;
     }
@@ -123,19 +129,18 @@
       border-radius: var(--radius-lg);
       padding: 0.6rem 1rem;
       box-shadow: none;
+      text-align: center;
     }
 
     .hero-text h2 {
       margin-top: 0;
       font-size: 1.2rem;
       margin-bottom: 0.3rem;
-      text-align: center;
     }
 
     .hero-text p {
       margin: 0 0 0.3rem;
       color: var(--muted);
-      text-align: center;
       font-size: 0.95rem;
     }
 
@@ -193,7 +198,15 @@
       color: var(--muted);
     }
 
-    /* MOBILE OPTIMIZATION */
+    .site-footer a {
+      color: inherit;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile */
     @media (max-width: 640px) {
       .logo-img {
         width: 100px;
@@ -220,6 +233,8 @@
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-content">
 
@@ -231,19 +246,29 @@
         </div>
       </div>
 
-      <a class="btn-primary" href="https://nidodelcardenalarte.mitiendanube.com/" target="_blank">Ir a la tienda</a>
+      <a class="btn-primary"
+         href="https://nidodelcardenalarte.mitiendanube.com/"
+         target="_blank" rel="noopener">
+        Ir a la tienda
+      </a>
+
     </div>
   </header>
 
+  <!-- MAIN -->
   <main>
 
-    <!-- HERO REDUCIDO -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
           <h2>Un refugio para imágenes que quieren volar</h2>
           <p>Obras del interior, pequeñas y luminosas, hechas para acompañar los rincones que piden paisaje.</p>
-          <a class="btn-secondary" href="https://nidodelcardenalarte.mitiendanube.com/" target="_blank">Ver obras disponibles</a>
+          <a class="btn-secondary"
+             href="https://nidodelcardenalarte.mitiendanube.com/"
+             target="_blank" rel="noopener">
+            Ver obras disponibles
+          </a>
         </div>
       </div>
     </section>
@@ -257,7 +282,9 @@
 
           <!-- Gustavo -->
           <article class="artist-card">
-            <img src="img/gustavo-lozano.jpg" class="artist-photo">
+            <img src="img/gustavo-lozano.jpg"
+                 alt="Obra o retrato de Gustavo Lozano"
+                 class="artist-photo">
             <div class="artist-info">
               <h3>Gustavo Lozano</h3>
               <p>Poeta y fotógrafo. El litoral, los cardos y las orillas mudadas recorren su obra mínima y luminosa.</p>
@@ -266,17 +293,21 @@
 
           <!-- Sol -->
           <article class="artist-card">
-            <img src="img/sol-santarsiero.jpg" class="artist-photo">
+            <img src="img/sol-santarsiero.jpg"
+                 alt="Obra o retrato de Sol Santarsiero"
+                 class="artist-photo">
             <div class="artist-info">
               <h3>Sol Santarsiero</h3>
               <p>Fotógrafa de paisaje y retratos. Postales del interior donde la luz se queda sobre montañas y paredes.</p>
             </div>
           </article>
 
-          <!-- Julio (comentado) -->
+          <!-- Julio (en espera) -->
           <!--
           <article class="artist-card">
-            <img src="img/julio-fuks.jpg" class="artist-photo">
+            <img src="img/julio-fuks.jpg"
+                 alt="Obra o retrato de Julio Fuks"
+                 class="artist-photo">
             <div class="artist-info">
               <h3>Julio Fuks</h3>
               <p>Dibujante y fotógrafo. Líneas, sombras y ciudad detenidas en sus bordes mínimos.</p>
@@ -290,12 +321,20 @@
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <p>Nido del Cardenal — Arte en pequeño formato</p>
-      <p>Obras disponibles en <a href="https://nidodelcardenalarte.mitiendanube.com/" target="_blank">Nuestra Tienda Nube</a>.</p>
+      <p>Obras disponibles en
+        <a href="https://nidodelcardenalarte.mitiendanube.com/"
+           target="_blank" rel="noopener">
+          Nuestra Tienda Nube
+        </a>.
+      </p>
     </div>
   </footer>
 
 </body>
 </html>
+
+
