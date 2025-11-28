@@ -84,6 +84,12 @@
       background: transparent;
     }
 
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+    }
+
     /* HERO */
     .hero {
       padding: 0.8rem 0 0.4rem;
@@ -103,7 +109,7 @@
       margin: 0 0 0.3rem;
     }
 
-    /* ARTISTAS */
+    /* ARTISTAS / LIBROS */
     .artists {
       background: var(--bg-alt);
       padding: 1.4rem 0 2rem;
@@ -139,6 +145,12 @@
       border-radius: 14px;
       object-fit: cover;
       max-height: 260px;
+    }
+
+    .artist-card h3 {
+      margin-top: 0.7rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
     }
 
     footer {
@@ -187,6 +199,12 @@
        target="_blank" rel="noopener">
        Ir a la tienda
     </a>
+
+    <a class="btn-secondary"
+       href="https://nidodelcardenalarte.mitiendanube.com/libros"
+       target="_blank" rel="noopener">
+       Libros
+    </a>
   </div>
 </header>
 
@@ -222,6 +240,26 @@
           <p>Fotógrafa de paisaje y retratos. Postales del interior donde la luz se queda sobre montañas y paredes.</p>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMINITO DE LIBROS -->
+  <section class="artists">
+    <div class="container">
+      <h2>Caminito de libros</h2>
+
+      <div class="artists-grid">
+        <article class="artist-card">
+          <img src="img/sol-entre-cardos-portada.jpg" class="artist-photo" alt="El sol entre los cardos">
+          <h3>El sol entre los cardos</h3>
+          <p>Poesía del litoral: cardos, orillas y resplandores mínimos para acompañar tus rincones.</p>
+          <a class="btn-secondary"
+             href="https://nidodelcardenalarte.mitiendanube.com/libros"
+             target="_blank" rel="noopener">
+             Comprar libro
+          </a>
+        </article>
       </div>
     </div>
   </section>
