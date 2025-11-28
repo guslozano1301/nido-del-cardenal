@@ -112,3 +112,173 @@
     /* ARTISTAS / LIBROS */
     .artists {
       background: var(--bg-alt);
+      padding: 1.4rem 0 2rem;
+    }
+
+    .artists h2 {
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+    }
+
+    .artists-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    @media (max-width: 500px) {
+      .artists-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .artist-card {
+      background: #fdf8f2;
+      padding: 1rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .artist-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      object-fit: contain;
+      background: #fff; /* para que se vea prolijo si sobran bordes */
+    }
+
+    .artist-card h3 {
+      margin-top: 0.7rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      padding: 1.4rem 0 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social-footer {
+      margin-top: 0.8rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 480px) {
+      .social-footer {
+        flex-direction: column;
+      }
+      .social-footer a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-content">
+    <img src="img/logo-nido.png" class="logo-img" alt="Nido del Cardenal logo">
+    <h1>Nido del Cardenal</h1>
+
+    <a class="btn-primary"
+       href="https://nidodelcardenalarte.mitiendanube.com/"
+       target="_blank" rel="noopener">
+       Ir a la tienda
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-text">
+      <h2>Un refugio de obras que buscan vuelo</h2>
+      <p>Imágenes que iluminan los rincones que extrañan el paisaje.</p>
+      <a class="btn-secondary"
+         href="https://nidodelcardenalarte.mitiendanube.com/"
+         target="_blank" rel="noopener">
+         Ver obras disponibles
+      </a>
+    </div>
+  </section>
+
+  <section class="artists">
+    <div class="container">
+      <h2>Artistas</h2>
+
+      <div class="artists-grid">
+
+        <article class="artist-card">
+          <img src="img/gustavo-lozano.jpg" class="artist-photo" alt="Gustavo Lozano">
+          <h3>Gustavo Lozano</h3>
+          <p>Poeta y fotógrafo. El litoral, los cardos y las orillas mudadas recorren su obra mínima y luminosa.</p>
+        </article>
+
+        <article class="artist-card">
+          <img src="img/sol-santarsiero.jpg" class="artist-photo" alt="Sol Santarsiero">
+          <h3>Sol Santarsiero</h3>
+          <p>Fotógrafa de paisaje y retratos. Postales del interior donde la luz se queda sobre montañas y paredes.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMINITO DE LIBROS -->
+  <section class="artists">
+    <div class="container">
+      <h2>Caminito de libros</h2>
+
+      <div class="artists-grid">
+        <article class="artist-card">
+          <img src="img/libros-del-cardenal.jpg" class="artist-photo" alt="Libros del cardenal">
+          <h3>Libros del cardenal</h3>
+          <p>Poesía del litoral: cardos, orillas y resplandores mínimos para acompañar tus rincones.</p>
+          <a class="btn-secondary"
+             href="https://nidodelcardenalarte.mitiendanube.com/libros"
+             target="_blank" rel="noopener">
+             Comprar libro
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Nido del Cardenal — Arte en pequeño formato</p>
+  <p>
+    Obras disponibles en
+    <a href="https://nidodelcardenalarte.mitiendanube.com/"
+       target="_blank" rel="noopener">Nuestra Tienda Nube</a>.
+  </p>
+
+  <div class="social-footer">
+    <a class="btn-secondary"
+       href="https://instagram.com/nidodelcardenal"
+       target="_blank" rel="noopener">Instagram</a>
+
+    <a class="btn-secondary"
+       href="https://wa.me/541170542045"
+       target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</footer>
+
+</body>
+</html>
