@@ -1,317 +1,57 @@
-<!doctype html> 
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nido del Cardenal — Arte</title>
+<section class="artists">
+  <div class="container">
+    <h2>Artistas</h2>
 
-  <style>
-    :root {
-      --bg: #f5efe6;
-      --bg-alt: #f1e4d4;
-      --text: #3b2f2a;
-      --muted: #7d6a5b;
-      --accent: #c99a5b;
-      --accent-soft: #e0b980;
-      --radius-lg: 18px;
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
-    }
+    <div class="artists-grid" style="grid-template-columns: 1fr 1fr 1fr;">
 
-    * { box-sizing: border-box; }
+      <!-- 1) GUSTAVO LOZANO -->
+      <article class="artist-card">
+        <img src="img/gustavo-lozano.jpg" class="artist-photo" alt="Gustavo Lozano">
+        <h3>Gustavo Lozano</h3>
+        <p>Poeta y fotógrafo. El litoral, los cardos y las orillas mudadas recorren su obra mínima y luminosa.</p>
+        <a class="btn-secondary"
+           href="https://nidodelcardenalarte.mitiendanube.com/fotografia/gustavo-lozano/"
+           target="_blank" rel="noopener">
+           Comprar obra
+        </a>
+      </article>
 
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+      <!-- 2) JULIO FUKS -->
+      <article class="artist-card">
+        <img src="img/julio-fuks.jpg" class="artist-photo" alt="Julio Fuks">
+        <h3>Julio Fuks</h3>
+        <p>Artista visual formado en dibujo, grabado y fotografía. Su obra crece en series y ensayos, construidas con paciencia y rigor.</p>
+        <a class="btn-secondary"
+           href="https://nidodelcardenalarte.mitiendanube.com/fotografia/julio-fuks/"
+           target="_blank" rel="noopener">
+           Comprar obra
+        </a>
+      </article>
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+      <!-- 3) SOL SANTARSIERO -->
+      <article class="artist-card">
+        <img src="img/sol-santarsiero.jpg" class="artist-photo" alt="Sol Santarsiero">
+        <h3>Sol Santarsiero</h3>
+        <p>Fotógrafa de paisaje y retratos. Postales del interior donde la luz se queda sobre montañas y paredes.</p>
+        <a class="btn-secondary"
+           href="https://nidodelcardenalarte.mitiendanube.com/fotografia/sol-santarsiero/"
+           target="_blank" rel="noopener">
+           Comprar obra
+        </a>
+      </article>
 
-    /* Header */
-    .site-header {
-      background: linear-gradient(to bottom, #f7f0e5, #f3e7d9);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      padding: 1rem 0;
-    }
+      <!-- 4) LIBROS DEL CARDENAL (al lado de Sol) -->
+      <article class="artist-card">
+        <img src="img/libros-del-cardenal.jpg" class="artist-photo" alt="Libros del cardenal">
+        <h3>Libros del cardenal</h3>
+        <p>Poesía del litoral para acompañar tus rincones.</p>
+        <a class="btn-secondary"
+           href="https://nidodelcardenalarte.mitiendanube.com/libros"
+           target="_blank" rel="noopener">
+           Comprar libros
+        </a>
+      </article>
 
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .logo-img {
-      width: 110px;
-      height: 110px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: var(--shadow-soft);
-    }
-
-    h1 {
-      margin: 0.2rem 0 0;
-      font-size: 1.4rem;
-      text-align: center;
-    }
-
-    .btn-primary, .btn-secondary {
-      display: inline-block;
-      text-decoration: none;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: 0.15s;
-      text-align: center;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .btn-secondary {
-      border: 1px solid var(--accent-soft);
-      color: var(--text);
-      background: transparent;
-    }
-
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-soft);
-    }
-
-    /* HERO */
-    .hero {
-      padding: 0.8rem 0 0.4rem;
-      text-align: center;
-    }
-
-    .hero-text {
-      background: rgba(255,255,255,0.45);
-      border-radius: var(--radius-lg);
-      padding: 0.6rem 1rem;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-
-    .hero-text h2 {
-      font-size: 1.2rem;
-      margin: 0 0 0.3rem;
-    }
-
-    /* ARTISTAS / LIBROS */
-    .artists {
-      background: var(--bg-alt);
-      padding: 1.4rem 0 2rem;
-    }
-
-    .artists h2 {
-      text-align: center;
-      margin-bottom: 1.2rem;
-      font-size: 1.4rem;
-    }
-
-    .artists-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-
-    @media (max-width: 500px) {
-      .artists-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .artist-card {
-      background: #fdf8f2;
-      padding: 1rem;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .artist-photo {
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      object-fit: contain;
-      background: #fff;
-    }
-
-    .artist-card h3 {
-      margin-top: 0.7rem;
-      margin-bottom: 0.4rem;
-      font-size: 1.05rem;
-    }
-
-    footer {
-      padding: 1.4rem 0 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .social-footer {
-      margin-top: 0.8rem;
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-    }
-
-    @media (max-width: 480px) {
-      .social-footer {
-        flex-direction: column;
-      }
-      .social-footer a {
-        width: 100%;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<header class="site-header">
-  <div class="container header-content">
-    <img src="img/logo-nido.png" class="logo-img" alt="Nido del Cardenal logo">
-    <h1>Nido del Cardenal</h1>
-
-    <a class="btn-primary"
-       href="https://nidodelcardenalarte.mitiendanube.com/"
-       target="_blank" rel="noopener">
-       Ir a la tienda
-    </a>
+    </div>
   </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="container hero-text">
-      <h2>Un refugio de obras que buscan vuelo</h2>
-      <p>Imágenes que iluminan los rincones que extrañan el paisaje.</p>
-      <a class="btn-secondary"
-         href="https://nidodelcardenalarte.mitiendanube.com/"
-         target="_blank" rel="noopener">
-         Ver obras disponibles
-      </a>
-    </div>
-  </section>
-
-  <section class="artists">
-    <div class="container">
-      <h2>Artistas</h2>
-
-      <div class="artists-grid">
-
-             
-  
-        <!-- ARTISTA: GUSTAVO LOZANO -->
-        <article class="artist-card">
-          <img src="img/gustavo-lozano.jpg" class="artist-photo" alt="Gustavo Lozano">
-          <h3>Gustavo Lozano</h3>
-          <p>Poeta y fotógrafo. El litoral, los cardos y las orillas mudadas recorren su obra mínima y luminosa.</p>
-
-          <a class="btn-secondary"
-             href="https://nidodelcardenalarte.mitiendanube.com/fotografia/gustavo-lozano/"
-             target="_blank" rel="noopener">
-             Comprar obra
-          </a>
-        </article>
-
-        <!-- ARTISTA: SOL SANTARSIERO -->
-        <article class="artist-card">
-          <img src="img/sol-santarsiero.jpg" class="artist-photo" alt="Sol Santarsiero">
-          <h3>Sol Santarsiero</h3>
-          <p>Fotógrafa de paisaje y retratos. Postales del interior donde la luz se queda sobre montañas y paredes.</p>
-
-          <a class="btn-secondary"
-             href="https://nidodelcardenalarte.mitiendanube.com/fotografia/sol-santarsiero/"
-             target="_blank" rel="noopener">
-             Comprar obra
-          </a>
-        </article>
-
-   <!-- ARTISTA: JULIO FUKS -->
-        <article class="artist-card">
-          <img src="img/julio-fuks.jpg" class="artist-photo" alt="Julio Fuks">
-          <h3>Julio Fuks</h3>
-          <p>Artista visual formado en dibujo, grabado y fotografía.
-            Su trabajo crece en series y ensayos, donde cada imagen
-          se construye con paciencia y rigor.
-          Observa, investiga y vuelve sobre la forma
-          hasta encontrar su equilibrio.</p>
-
-          <a class="btn-secondary"
-             href="https://nidodelcardenalarte.mitiendanube.com/artista/julio-fuks2/"
-             target="_blank" rel="noopener">
-             Comprar obra
-          </a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CAMINITO DE LIBROS -->
-  <section class="artists">
-    <div class="container">
-      <h2>Caminito de libros</h2>
-
-      <div class="artists-grid">
-        <article class="artist-card">
-          <img src="img/libros-del-cardenal.jpg" class="artist-photo" alt="Libros del cardenal">
-          <h3>Libros del cardenal</h3>
-          <p>Poesía del litoral: cardos, orillas y resplandores mínimos para acompañar tus rincones.</p>
-          <a class="btn-secondary"
-             href="https://nidodelcardenalarte.mitiendanube.com/libros"
-             target="_blank" rel="noopener">
-             Comprar libros
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <p>Nido del Cardenal — Arte en pequeño formato</p>
-  <p>
-    Obras disponibles en
-    <a href="https://nidodelcardenalarte.mitiendanube.com/"
-       target="_blank" rel="noopener">Nuestra Tienda Nube</a>.
-  </p>
-
-  <div class="social-footer">
-    <a class="btn-secondary"
-       href="https://instagram.com/nidodelcardenal"
-       target="_blank" rel="noopener">Instagram</a>
-
-    <a class="btn-secondary"
-       href="https://wa.me/541170542045"
-       target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-</footer>
-
-</body>
-</html>
+</section>
